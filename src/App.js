@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
@@ -9,26 +9,21 @@ import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
-  const [tasks, setTask] = useState([
-    {
-      id: 1,
-      text: 'Learn React',
-      day: '26 August 2021',
-      reminder: true,
-    },
-    {
-      id: 2,
-      text: 'Learn Redux',
-      day: '29 August 2021',
-      reminder: true,
-    },
-    {
-      id: 3,
-      text: 'Buy led switches',
-      day: '26 August 2021',
-      reminder: false,
-    },
-  ])
+  const [tasks, setTask] = useState([])
+
+  useEffect(() => {
+    const getTask = async () => {
+      const taskFromServer = await fetchTask()
+      setTask(taskFromServer)
+    }
+    getTask()
+  }, [])
+
+  const fetchTask = async () =>{
+    const res = await fetch('http://localhost:5000/tasks')
+    const data = await res.json()
+    return data
+  }
 
   const saveTask = (task) => {
     const id = uuidv4();
