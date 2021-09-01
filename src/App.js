@@ -10,14 +10,20 @@ function App() {
 
   useEffect(() => {
     const getTask = async () => {
-      const taskFromServer = await fetchTask()
+      const taskFromServer = await fetchTasks()
       setTask(taskFromServer)
     }
     getTask()
   }, [])
 
-  const fetchTask = async () =>{
+  const fetchTasks = async () =>{
     const res = await fetch('http://localhost:5000/tasks')
+    const data = await res.json()
+    return data
+  }
+
+  const fetchTask = async (id) =>{
+    const res = await fetch(`http://localhost:5000/tasks/${id}`)
     const data = await res.json()
     return data
   }
@@ -44,9 +50,24 @@ function App() {
     setTask(tasks.filter((task) => task.id !== id));
   }
 
-  const toggleReminder = (id) => {
+  const toggleReminder = async (id) => {
+    const taskToToggleReminder = await fetchTask(id)
+    const updatedTask = {
+      ...taskToToggleReminder, 
+      reminder: !taskToToggleReminder.reminder
+    }
+
+    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(updatedTask)
+    })
+    const data = await res.json()
+    
     setTask(tasks.map((task) => task.id === id 
-      ? {...task, reminder: !task.reminder} 
+      ? {...task, reminder: data.reminder} 
       : task));
   }
 

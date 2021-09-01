@@ -19,8 +19,14 @@
       "reminder": false
     },
     {
-      "text": "Learn Kubernetes",
-      "day": "28 sep 2021",
+      "text": "Learn Kubernetes (mod1)",
+      "day": "28 Sep 2021",
+      "reminder": true,
+      "id": 4
+    },
+    {
+      "text": "Learn Kubernetes (mod2)",
+      "day": "29 Sep 2021",
       "reminder": true,
       "id": 5
     }
