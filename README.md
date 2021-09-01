@@ -5,6 +5,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+### `yarn server`
+
+You must to run the fake server to simulate a backend. This server will be serve at port 5000. Open [http://localhost:5000](http://localhost:5000) to view what in the server is. This server was created thanks to [json-server](https://www.npmjs.com/package/json-server) library.
 
 ### `yarn start`
 
