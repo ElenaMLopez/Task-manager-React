@@ -9,9 +9,21 @@ body {
   font-family: 'Urbanist', sans-serif;
 }
 
+a { 
+  color:#285463;
+}
+
+a:visited { 
+  color:#2f6476;
+}
+
+a:hover { 
+  color:#173039;
+}
+
 .container {
   border-radius: 5px;
-  border: 1px solid rgb(93, 182, 215);
+  border: 1px solid #5db6d7;
   margin: 30px auto;
   max-width: 500px;
   min-height: 300px;
@@ -108,8 +120,18 @@ body {
 .about-container p{
   margin: 20px 0;
 }
+.awesomeinfo-container p{
+  margin: 20px 0;
+}
+.awesomeinfo-container a{
+  margin: 0 2px 0 0
+}
 
-footer {
+.footer-container {
   margin-top: 30px;
   text-align: center;
+}
+
+.footer-container a{
+  margin: 0 5px;
 }

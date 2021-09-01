@@ -6,6 +6,7 @@ import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
 import Footer from './components/Footer';
 import About from './components/About';
+import AwesomeInfo from './components/AwesomeInfo';
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
@@ -96,6 +97,7 @@ function App() {
           </>
           )} />
         <Route path='/about' component={About} />
+        <Route path='/awesome-info' component={AwesomeInfo} />
         <Footer />
       </div>
     </Router>
