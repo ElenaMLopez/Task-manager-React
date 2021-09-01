@@ -3,9 +3,6 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
-import { v4 as uuidv4 } from 'uuid';
-
-
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
@@ -25,15 +22,24 @@ function App() {
     return data
   }
 
-  const saveTask = (task) => {
-    const id = uuidv4();
-    const taskToAdd = {id, ...task};
-    setTask([...tasks, taskToAdd]);
+  const saveTask = async (task) => {
+    const res = await fetch('http://localhost:5000/tasks ', {
+      method: 'POST',
+      headers: { 
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(task)
+    })
 
+    const data = await res.json()
+
+    setTask([...tasks, data])
   }
 
   const deleteTask = async (id) => {
-    await fetch(`http://localhost:5000/tasks/${id}`, {method: 'DELETE'})
+    await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: 'DELETE'
+    })
 
     setTask(tasks.filter((task) => task.id !== id));
   }

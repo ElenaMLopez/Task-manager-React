@@ -17,6 +17,12 @@
       "text": "Buy led switches",
       "day": "26 August 2021",
       "reminder": false
+    },
+    {
+      "text": "Learn Kubernetes",
+      "day": "28 sep 2021",
+      "reminder": true,
+      "id": 5
     }
   ]
 }
