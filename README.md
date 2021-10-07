@@ -1,13 +1,17 @@
-# Getting Started with Create React App
+# What is this? 
+This is a simple project bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Nice project to start learning React, Good project to start learning React, the typical one when you start developing with a new library. Here you can find the common aspects of how to work with React. 
+
+It has a nice thing, you don't need to make a backend or use an external API, because there is a service called 'server', which you can store locally all your data. You can see information about this library at the [JSON server in npm](https://www.npmjs.com/package/json-server).
+
+
 
 ## Available Scripts
-
-In the project directory, you can run:
+Start running the local server: 
 ### `yarn server`
 
-You must to run the fake server to simulate a backend. This server will be serve at port 5000. Open [http://localhost:5000](http://localhost:5000) to view what in the server is. This server was created thanks to [json-server](https://www.npmjs.com/package/json-server) library.
+With this server, you simulate a backend. This server will be served at port 5000. Open [http://localhost:5000](http://localhost:5000) to view what in the server is. 
 
 ### `yarn start`
 
