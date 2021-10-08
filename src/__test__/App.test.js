@@ -39,7 +39,17 @@ test('If user can add a date for a new task', async () => {
   render(<App />);
   const button = screen.getByText(/Add/i);
   userEvent.click(button);
-  const taskNameInput = await screen.getByPlaceholderText(/Add Day & Time/i)
-  userEvent.type(taskNameInput, '3 January 2025');
-  expect(taskNameInput).toHaveValue('3 January 2025')
+  const addDate = await screen.getByPlaceholderText(/Add Day & Time/i)
+  userEvent.type(addDate, '3 January 2025');
+  expect(addDate).toHaveValue('3 January 2025')
+})
+test('If user can add a reminder', async () => {
+  render(<App />);
+  const button = screen.getByText(/Add/i);
+  userEvent.click(button);
+
+  const reminderCheckbox = await screen.getByText(/Set Reminder/i)
+  userEvent.click(reminderCheckbox)
+  // userEvent.type(taskNameInput, '3 January 2025');
+  expect(screen.getByLabelText(/Set Reminder/i)).toBeChecked()
 })
