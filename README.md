@@ -1,11 +1,13 @@
 # What is this? 
 This is a simple project bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Nice project to start learning React, Good project to start learning React, the typical one when you start developing with a new library. Here you can find the common aspects of how to work with React. 
+Is Good project to **start learning React** 👶🏻, the typical one when you start developing with a new library. Here you can find the common aspects of how to work with React. Don't search here a way to integrate services or clean architecture, because is just to understand the basics of React. 
+
+It has just some test to see the basics of React testing library, but don't look for a nice testing path, in this time is just a basic testing to start.
 
 It has a nice thing, you don't need to make a backend or use an external API, because there is a service called 'server', which you can store locally all your data. You can see information about this library at the [JSON server in npm](https://www.npmjs.com/package/json-server).
 
-
+Hope you like it =)
 
 ## Available Scripts
 Start running the local server: 
