@@ -1,3 +1,8 @@
+# Task-manager-React
+
+<img width="800" alt="React task manager" src="https://user-images.githubusercontent.com/27022503/139690576-17fb28b9-329a-4568-bec0-8225ff0ce4c3.png">
+
+
 # What is this? 
 This is a simple project bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
