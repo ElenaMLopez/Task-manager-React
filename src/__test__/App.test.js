@@ -50,6 +50,5 @@ test('If user can add a reminder', async () => {
 
   const reminderCheckbox = await screen.getByText(/Set Reminder/i)
   userEvent.click(reminderCheckbox)
-  // userEvent.type(taskNameInput, '3 January 2025');
   expect(screen.getByLabelText(/Set Reminder/i)).toBeChecked()
 })
